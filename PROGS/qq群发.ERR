@@ -1,0 +1,10 @@
+SendMg=\'http://hi.baidu.com/myvfp/blog\'
+Error in line 16: Syntax error.
+IF ALLTRIM(ClassName)=\'#32770\'
+Error in line 20: Missing operand.
+FirstHwnd=findWindowEx(qqHwnd, 0, \"#32770\", NULL)
+Error in line 21: Missing operand.
+SendHwnd = FindWindowEx(FirstHwnd, 0, \"Button\", \"·¢ËÍ(S)\")
+Error in line 23: Missing operand.
+ListHwnd=findWindowEx(FirstHwnd, 0, \"RichEdit20A\", NULL)
+Error in line 25: Missing operand.

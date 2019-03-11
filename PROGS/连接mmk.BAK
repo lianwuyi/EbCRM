@@ -1,0 +1,51 @@
+
+* 断开所有数据库连接
+SQLDisconnect(0)
+* 设定连接句柄为公共变量,可以为后面的程式引用
+Release lnHandle
+Public lnHandle
+lnHandle = 0
+
+*连接数据库
+Do ..\progs\连接数据库.prg
+
+If lnHandle <= 0 && 连接不成功,
+* 以下连接不成功的命令行
+	SQLDisconnect(0) && 断开所有数据连接
+	Release lnHandle && 删除连接句柄变量
+	Clear Dlls
+	Wait Window '提示:未能连接数据库,登录失败……' Nowait Noclear
+	Return
+Endif
+
+*-查询公司设置
+ln5=SQLExec(lnHandle,'select * from sys_gssetup ')
+If ln5<=0
+* 断开所有数据连接
+	SQLDisconnect(0) && 断开所有数据连接
+	Release lnHandle && 删除连接句柄变量
+	Clear Dlls
+	Close Databases All
+	Close Tables All
+	Wait Window '提示:登录失败！' TIMEOUT 0.3
+	QUIT 
+	RETURN 
+Endif
+c公司名称 = ALLTRIM(公司名称)
+c公司地址 = ALLTRIM(公司地址)
+c公司电话 = ALLTRIM(公司电话)
+c公司传真 = ALLTRIM(公司传真)
+c原寄地= ALLTRIM(原寄地)
+c寄件司手机 = ALLTRIM(寄件司手机)
+
+USE
+*------------------------------------------------------
+* 断开所有数据连接
+SQLDisconnect(0) && 断开所有数据连接
+Release lnHandle && 删除连接句柄变量
+Clear Dlls
+Close Databases All
+Close Tables All
+
+
+
