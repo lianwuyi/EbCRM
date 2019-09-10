@@ -1,6 +1,6 @@
 *       *********************************************************
 *       *                                                         
-*       * 03/11/19              EBCRM.MPR               16:33:00  
+*       * 09/10/19              EBCRM.MPR               15:10:54  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
@@ -29,15 +29,15 @@ SET SYSMENU AUTOMATIC
 DEFINE PAD _msm_file OF _MSYSMENU PROMPT "系统设置(\<A)" COLOR SCHEME 3 ;
 	NEGOTIATE  LEFT, NONE ;
 	KEY ALT+F, ""
-DEFINE PAD _5fn0zh0le OF _MSYSMENU PROMPT "会员资料(\<H)" COLOR SCHEME 3 ;
+DEFINE PAD _5kq0wjfo1 OF _MSYSMENU PROMPT "会员资料(\<H)" COLOR SCHEME 3 ;
 	KEY ALT+H, ""
-DEFINE PAD _5fn0zh0lf OF _MSYSMENU PROMPT "明细查询(\<M)" COLOR SCHEME 3 ;
+DEFINE PAD _5kq0wjfo2 OF _MSYSMENU PROMPT "明细查询(\<M)" COLOR SCHEME 3 ;
 	KEY ALT+M, ""
 DEFINE PAD _msm_systm OF _MSYSMENU PROMPT "关于(\<H)" COLOR SCHEME 3 ;
 	KEY ALT+H, ""
 ON PAD _msm_file OF _MSYSMENU ACTIVATE POPUP 系统设置a
-ON PAD _5fn0zh0le OF _MSYSMENU ACTIVATE POPUP 会员资料h
-ON PAD _5fn0zh0lf OF _MSYSMENU ACTIVATE POPUP 明细查询m
+ON PAD _5kq0wjfo1 OF _MSYSMENU ACTIVATE POPUP 会员资料h
+ON PAD _5kq0wjfo2 OF _MSYSMENU ACTIVATE POPUP 明细查询m
 ON PAD _msm_systm OF _MSYSMENU ACTIVATE POPUP 关于h
 
 DEFINE POPUP 系统设置a MARGIN RELATIVE SHADOW COLOR SCHEME 4

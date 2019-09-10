@@ -1,0 +1,21 @@
+LOCAL loCrypt
+LOCAL lcMac
+
+* This example assumes the Chilkat API to have been previously unlocked.
+* See Global Unlock Sample for sample code.
+
+loCrypt = CreateObject('Chilkat_9_5_0.Crypt2')
+
+* The output will be Hex, so set the EncodingMode:
+loCrypt.EncodingMode = "hex"
+
+* Set the hash algorithm:
+* Choices are: md5, sha-1, sha256, sha384, sha512, md2, haval
+loCrypt.HashAlgorithm = "sha256"
+
+* Set the HMAC key:
+loCrypt.SetHmacKeyEncoded("The_API_Secret","ascii")
+lcMac = loCrypt.HmacStringENC("The quick brown fox jumps over the lazy dog")
+? lcMac
+
+RELEASE loCrypt
